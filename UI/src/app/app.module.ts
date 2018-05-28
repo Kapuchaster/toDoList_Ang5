@@ -8,6 +8,7 @@ import { ToDoListComponent } from './to-do-list/to-do-list.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { StorageService } from './to-do-list/shared/storage.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     TooltipModule.forRoot(),
     ModalModule.forRoot()
   ],
-  providers: [],
+  providers: [StorageService],
   exports: [BsDropdownModule, TooltipModule, ModalModule],
   bootstrap: [AppComponent]
 })
