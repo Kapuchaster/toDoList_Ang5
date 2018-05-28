@@ -14,11 +14,16 @@ export class ToDoListComponent implements OnInit {
 
   ngOnInit() {
     this.taskList = [];
+    this.loadTaskListFromLocal();
   }
 
   addTask(task) {
     this.taskList.push(task);
     this.storageService.saveListToLocal(this.taskList);
+  }
+
+  loadTaskListFromLocal() {
+    this.taskList = this.storageService.getListFromLocal();
   }
 
 }

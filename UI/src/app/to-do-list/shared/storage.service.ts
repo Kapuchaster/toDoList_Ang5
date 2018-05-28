@@ -9,4 +9,8 @@ export class StorageService {
     window.localStorage.setItem('myLocalList', JSON.stringify(list));
   }
 
+  getListFromLocal (): Object[] {
+    return JSON.parse(window.localStorage.getItem('myLocalList'));
+  }
+
 }
