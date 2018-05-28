@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToDoListComponent implements OnInit {
 
+  private taskList: Object[];
+
   constructor() { }
 
   ngOnInit() {
+    this.taskList = [];
+  }
+
+  addTask(task) {
+    console.log(task);
+    this.taskList.push(task);
   }
 
 }

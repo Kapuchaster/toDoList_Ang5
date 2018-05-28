@@ -2,18 +2,20 @@
   <div class="col-sm">
     <!-- /TODO SPACE/ -->
     <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="New task" aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <input #newTaskInput type="text" 
+            (keyup.enter)="addTask(newTaskInput.value); newTaskInput.value=''" 
+            class="form-control" 
+            placeholder="New task" 
+            aria-label="New task">
         <div class="input-group-append">
-          <button class="btn btn-primary" type="button">Add / Enter</button>
+          <button class="btn btn-primary" type="button" (click)="addTask(newTaskInput.value); newTaskInput.value=''">Add / Enter</button>
         </div>
     </div>
     <ul class="list-group">
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Morbi leo risus</li>
-        <li class="list-group-item">Porta ac consectetur ac</li>
-        <li class="list-group-item">Vestibulum at eros</li>
-      </ul>
+        <li *ngFor="let task of taskList" class="list-group-item">
+            {{task}}
+        </li>
+    </ul>
   </div>
   <div class="col-sm">
         <div class="row">
